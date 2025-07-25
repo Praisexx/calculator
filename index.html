@@ -22,10 +22,7 @@
 
     <button id="calculateBtn">Calculate Tip</button>
    
-   <div id="result">
-    <p> <span id="tipAmount"></span></p>
-    <p> <span id="totalAmount"></span></p>
-   </div>
+   
    <!-- Add the popup here -->
         <div class="popup" id="popup" style="display: none;">
             <div class="popup-content">
@@ -53,8 +50,6 @@ window.onload = function() {
         console.log("Tip amount:", );
         console.log("Total amount:", );
 
-        document.getElementById('tipAmount').textContent = tipAmount.toFixed(2);
-document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
 document.getElementById('popupTip').textContent = tipAmount.toFixed(2);
 document.getElementById('popupTotal').textContent = totalAmount.toFixed(2);
 document.getElementById('popup').style.display = 'flex';
