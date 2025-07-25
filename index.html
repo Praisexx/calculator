@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my calculator</title>
+    <link rel="stylesheet" href="me.css">
+</head>
+<body>
+    <div class="container">
+    <h1>calculator</h1>
+
+    <div class="input-group">
+    <label for="billAmount">billamount ($)</label>
+    <input type="number" id="billAmount" placeholder="enter the bill amount">
+  </div>
+
+  <div class="input-group">
+    <label for="tipPercent">tip Percentage ($)</label>
+    <input type="number" id="tipPercent" placeholder="enter the tip Percentage">
+  </div>
+
+    <button id="calculateBtn">Calculate Tip</button>
+   
+   <div id="result">
+    <p> <span id="tipAmount"></span></p>
+    <p> <span id="totalAmount"></span></p>
+   </div>
+   <!-- Add the popup here -->
+        <div class="popup" id="popup" style="display: none;">
+            <div class="popup-content">
+                <h3>Calculation Complete!</h3>
+                <p><span id="popupTip"></span></p>
+                <p><span id="popupTotal"></span></p>
+                <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+            </div>
+        </div>
+</div>
+  <!--<script src="hahaha.js"></script>-->
+  <script>
+window.onload = function() {
+    const button = document.getElementById('calculateBtn');
+    
+    button.addEventListener('click', function() {
+        // Get the input values and convert to numbers
+        const billAmount = Number(document.getElementById('billAmount').value);
+        const tipPercent = Number(document.getElementById('tipPercent').value);
+        
+        // Calculate the tip
+        const tipAmount = (billAmount * tipPercent) / 100;
+        const totalAmount = billAmount + tipAmount;
+        
+        console.log("Tip amount:", );
+        console.log("Total amount:", );
+
+        document.getElementById('tipAmount').textContent = tipAmount.toFixed(2);
+document.getElementById('totalAmount').textContent = totalAmount.toFixed(2);
+document.getElementById('popupTip').textContent = tipAmount.toFixed(2);
+document.getElementById('popupTotal').textContent = totalAmount.toFixed(2);
+document.getElementById('popup').style.display = 'flex';
+
+
+    });
+};
+</script>
+</body>
+</html>
